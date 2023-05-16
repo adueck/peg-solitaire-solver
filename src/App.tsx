@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <h1>Peg Solitaire Solver</h1>
-      <p>A brute-force peg-solitare solver with an interactive playground to explore the solutions - <a href="https://github.com/adueck/peg-solitare-solver">Source Code</a></p>
+      <p>A brute-force peg-solitaire solver with an interactive playground to explore the solutions - <a href="https://github.com/adueck/peg-solitare-solver">Source Code</a></p>
       <div style={{ marginBottom: "2rem" }}> 
         <button onClick={decRows}>-</button>
           <span style={{ margin: "0 2rem" }}>Rows: {rows}</span>
