@@ -30,7 +30,9 @@ function App() {
   return (
     <>
       <h1>Peg Solitaire Solver</h1>
-      <p>A brute-force peg solitaire solver with an interactive playground to explore the solutions - <a href="https://github.com/adueck/peg-solitaire-solver">Source Code</a></p>
+      <p>A brute-force peg solitaire solver with an interactive playground to explore the solutions</p>
+      <p><a href="https://github.com/adueck/peg-solitaire-solver">Source Code</a></p>
+      <p><em>Select 5 rows for the full Crackel Barrel game</em></p>
       <div style={{ marginBottom: "2rem", marginTop: "2rem" }}> 
         <button onClick={decRows}>-</button>
           <span style={{ margin: "0 2rem" }}>Rows: {rows}</span>

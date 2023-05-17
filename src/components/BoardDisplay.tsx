@@ -6,5 +6,5 @@ export function BoardDisplay({ board: b }: { board: Board; }) {
     }
     t += "\n";
   }
-  return <code><pre>{t}</pre></code>;
+  return <code><pre style={{ fontSize: "larger" }}>{t}</pre></code>;
 }
