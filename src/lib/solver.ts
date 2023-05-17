@@ -31,18 +31,25 @@ function solve(gs: GameState): GameState[] {
         )).flatMap(solve);
 }
 
-export function getSolutions(rows: number): Solutions {
-    const startingBoard = makeStarter(rows);
+export function getSolutions(rows: number, startingPos: number): Solutions {
+    const startingBoard = makeStarter(rows, startingPos);
     const allPaths = solve([startingBoard]);
     const o = organizeSolutions(allPaths);
     return o;
 }
 
 
-export function makeStarter(rows: number): Board {
-    const b: Board = [[0]];
+export function makeStarter(rows: number, startingPos: number): Board {
+    const b: Board = [[startingPos === 0 ? 0 : 1]];
     for (let i = 2; i <= rows; i++) {
         b.push(Array(i).fill(1));
+    }
+    if (startingPos === 1) {
+        b[1][0] = 0;
+    } else if (startingPos === 2) {
+        b[2][1] = 0;
+    } else if (startingPos === 3) {
+        b[2][0] = 0;
     }
     return b;
 }
