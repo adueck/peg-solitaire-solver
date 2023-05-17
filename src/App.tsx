@@ -55,7 +55,7 @@ function App() {
         <button onClick={incStartingPos}>{`>`}</button>
       </div>
       {solutions !== "solving" && <button onClick={solve}>Solve</button>}
-      {rows === 5 && solutions === undefined && <p>Warning: solving will take a lot of time / memory</p>}
+      {rows === 5 && solutions === undefined && <p>Warning: solving will take time</p>}
       <div>
         {rows === 5 && solutions === "solving" && <samp>solving...</samp>}
       </div>

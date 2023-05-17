@@ -19,7 +19,7 @@ export default function SolutionsDisplay({ solutions }: { solutions: Solutions }
     }, []);
     function playSolutions() {
         // @ts-ignore
-        playInterval.current = setInterval(advanceGame, 125);
+        playInterval.current = setInterval(() => advanceGame(), 125);
     }
     function stopSolutions() {
         if (playInterval.current) { 
