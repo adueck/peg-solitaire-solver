@@ -88,6 +88,12 @@ export default function SolutionsDisplay({ solutions }: { solutions: Solutions }
                         <td>{s.paths.length}</td>
                         <td>{s.chance}%</td>
                     </tr>)}
+                    <tr>
+                        <td>TOTAL</td>
+                        <td>{solutions.reduce((total, { paths }) => {
+                            return total + paths.length;
+                        }, 0)}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

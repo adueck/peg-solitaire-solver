@@ -45,15 +45,17 @@ function App() {
       <p>A brute-force peg solitaire solver with an interactive playground to explore the solutions</p>
       <p><a href="https://github.com/adueck/peg-solitaire-solver">Source Code</a></p>
       <p><em>Select 5 rows for the full Crackel Barrel game</em></p>
-      <div style={{ marginBottom: "2rem", marginTop: "2rem" }}> 
-        <button onClick={decRows}>-</button>
+      <div style={{ margin: "1rem 0" }}> 
+        <button onClick={decRows}>{rows > minRows ? "-" : '\u00A0'}</button>
           <span style={{ margin: "0 2rem" }}>Rows: {rows}</span>
-        <button onClick={incRows} style={{ marginRight: "1rem" }}>+</button>
-          <span style={{ margin: "0 2rem" }}>Starting Pos:</span>
+        <button onClick={incRows} style={{ marginRight: "1rem" }}>{rows < maxRows ? "+" : '\u00A0'}</button>
+      </div>
+      <div style={{ margin: "1rem 0" }}>
+        <span style={{ margin: "0 2rem" }}>Starting Pos:</span>
         <button onClick={incStartingPos}>{`>`}</button>
       </div>
       {solutions !== "solving" && <button onClick={solve}>Solve</button>}
-      {rows === 5 && solutions === undefined && <p>Warning: Will take a lot of time / memory</p>}
+      {rows === 5 && solutions === undefined && <p>Warning: solving will take a lot of time / memory</p>}
       <div>
         {rows === 5 && solutions === "solving" && <samp>solving...</samp>}
       </div>
